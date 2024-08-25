@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0f7fa; /* Light blue background */
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #00796b; /* Teal color */
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #1e90ff; /* Blue border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #e6f7ff; /* Light blue on hover */
+}
+
+/* Colors for X and O */
+.cell.x {
+    color: #d32f2f; /* Red color for X */
+}
+
+.cell.o {
+    color: #388e3c; /* Green color for O */
+}
+
+.reset-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #007acc;
+}
+
+.status {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* Winning animations */
+.winner {
+    animation: highlight 0.5s ease forwards;
+}
+
+@keyframes highlight {
+    background-color: #ffeb3b; /* Yellow highlight for winning cells */
+    transform: scale(1.1);
+}
